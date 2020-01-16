@@ -6,9 +6,6 @@ public class sumMinMaxBottomUp {
 
     private int[] testArray;
 
-    /**
-     * Test will fail !
-     */
     @Test
     public void sumMinMax() {
         testArray = new int[]{3, 1, 5};

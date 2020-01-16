@@ -12,10 +12,15 @@ public class minValueBottomUp {
         assertEquals(4,Program.minValue(arrayTest));
     }
 
+    @Test
+    public void minValueDuplicates() {
+        arrayTest = new int[]{ 3, 7, 6, 3, 5};
+        assertEquals(3,Program.minValue(arrayTest));
+    }
 
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void minValueEmptyArray() {
         arrayTest = new int[]{};
-        assertEquals(9,Program.minValue(arrayTest));
+        assertEquals(3,Program.minValue(arrayTest));
     }
 }

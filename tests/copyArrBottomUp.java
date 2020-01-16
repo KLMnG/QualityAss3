@@ -6,9 +6,6 @@ public class copyArrBottomUp {
 
     private int[] arrayTest;
 
-    /**
-     * Test will fail !
-     */
     @Test
     public void copyArr() {
         arrayTest = new int[]{ 3, 1, 2, 4 };
