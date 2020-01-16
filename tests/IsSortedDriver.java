@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class isSortedBottomUp {
+public class IsSortedDriver {
 
     private int[] arrayTest;
 
@@ -16,5 +16,17 @@ public class isSortedBottomUp {
     public void isSortedFalse() {
         arrayTest = new int[]{4, 2, 3, 1};
         assertFalse(Program.isSorted(arrayTest));
+    }
+
+    @Test
+    public void isSortedEmpty() {
+        arrayTest = new int[]{};
+        assertTrue(Program.isSorted(arrayTest));
+    }
+
+    @Test
+    public void isSortedNull() {
+        arrayTest = null;
+        assertTrue(Program.isSorted(arrayTest));
     }
 }

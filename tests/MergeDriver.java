@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class mergeBottomUp {
+public class MergeDriver {
 
     private int[] firstArray;
     private int[] secondArray;
@@ -32,6 +32,20 @@ public class mergeBottomUp {
     @Test
     public void mergeFirstNull() {
         firstArray = null;
+        secondArray = new int[]{4, 3, 1, 2};
+        assertArrayEquals(new int[]{1, 2, 3, 4},Program.merge(firstArray, secondArray));
+    }
+
+    @Test
+    public void mergeSecondEmpty() {
+        firstArray = new int[]{4, 3, 1, 2};
+        secondArray = new int[]{};
+        assertArrayEquals(new int[]{1, 2, 3, 4},Program.merge(firstArray, secondArray));
+    }
+
+    @Test
+    public void mergeFirstEmpty() {
+        firstArray = new int[]{};
         secondArray = new int[]{4, 3, 1, 2};
         assertArrayEquals(new int[]{1, 2, 3, 4},Program.merge(firstArray, secondArray));
     }

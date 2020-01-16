@@ -2,13 +2,11 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class sumMinMaxBottomUp {
+public class SumMinMaxDriver {
 
     private int[] testArray;
 
-    /**
-     * Test will fail !
-     */
+
     @Test
     public void sumMinMax() {
         testArray = new int[]{3, 1, 5};
@@ -18,6 +16,12 @@ public class sumMinMaxBottomUp {
     @Test(expected = ArrayIndexOutOfBoundsException.class)
     public void sumMinMaxEmpty() {
         testArray = new int[]{};
-        assertEquals(-2,Program.sumMinMax(testArray));
+        Program.sumMinMax(testArray);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void sumMinMaxNull() {
+        testArray = null;
+        Program.sumMinMax(testArray);
     }
 }

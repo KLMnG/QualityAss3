@@ -7,7 +7,7 @@ import java.io.PrintStream;
 
 import static org.junit.Assert.*;
 
-public class printArrBottomUp {
+public class PrintSortedDriver {
 
     private final ByteArrayOutputStream outContent = new ByteArrayOutputStream();
     private final ByteArrayOutputStream errContent = new ByteArrayOutputStream();
@@ -27,10 +27,28 @@ public class printArrBottomUp {
         System.setErr(originalErr);
     }
 
+
     @Test
-    public void printArr() {
-        arrayTest = new int[]{1, 2, 3};
-        Program.printArr(arrayTest);
-        assertEquals("1 2 3 \n", outContent.toString());
+    public void printSorted() {
+        arrayTest = new int[]{1, 3, 2};
+        Program.printSorted(arrayTest);
+        assertEquals("1 3 2 \r\n1 2 3 \r\n1 3 2 \r\n", outContent.toString());
     }
+
+    @Test
+    public void printSortedEmpty() {
+        arrayTest = new int[]{};
+        Program.printSorted(arrayTest);
+        assertEquals("\r\n\r\n\r\n", outContent.toString());
+    }
+
+    @Test
+    public void printSortedNull() {
+        arrayTest = null;
+        Program.printSorted(arrayTest);
+        assertEquals("No array", outContent.toString());
+
+    }
+
+
 }

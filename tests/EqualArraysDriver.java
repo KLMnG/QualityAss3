@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class equalArraysBottomUp {
+public class EqualArraysDriver {
 
     private int[] firstArray;
     private int[] secondArray;
@@ -14,8 +14,17 @@ public class equalArraysBottomUp {
         assertTrue(Program.equalArrays(firstArray, secondArray));
     }
 
+    //fixed
     @Test
-    public void equalArraysDifferentArray() {
+    public void equalEmptyArrays() {
+        firstArray = new int[]{};
+        secondArray = new int[]{};
+        assertTrue(Program.equalArrays(firstArray, secondArray));
+    }
+
+    //fixed
+    @Test
+    public void equalArraySizeDifferentArray() {
         firstArray = new int[]{4, 2, 5, 1};
         secondArray = new int[]{4, 3, 5, 1};
         assertFalse(Program.equalArrays(firstArray, secondArray));

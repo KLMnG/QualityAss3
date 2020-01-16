@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class maxValueIndexBottomUp {
+public class MaxValueIndexDriver {
 
     private int[]arrayTest;
 
@@ -10,6 +10,7 @@ public class maxValueIndexBottomUp {
      *  Test will fail !
      *  because the function should return the index of the minimum value, it returns the minimum value
      */
+    //fixed
     @Test
     public void maxValueIndex() {
         arrayTest = new int[]{ 9, 4, 6, 7, 5};
@@ -19,6 +20,12 @@ public class maxValueIndexBottomUp {
     @Test
     public void maxValueIndexEmptyArray() {
         arrayTest = new int[]{};
+        assertEquals(-1,Program.maxValueIndex(arrayTest));
+    }
+
+    @Test
+    public void maxValueIndexNullArray() {
+        arrayTest = null;
         assertEquals(-1,Program.maxValueIndex(arrayTest));
     }
 
