@@ -6,14 +6,16 @@ public class maxValueIndexBottomUp {
 
     private int[]arrayTest;
 
-    /**
-     *  Test will fail !
-     *  because the function should return the index of the minimum value, it returns the minimum value
-     */
     @Test
     public void maxValueIndex() {
-        arrayTest = new int[]{ 9, 4, 6, 7, 5};
-        assertEquals(0,Program.maxValueIndex(arrayTest));
+        arrayTest = new int[]{ 3, 4, 6, 7, 5};
+        assertEquals(3,Program.maxValueIndex(arrayTest));
+    }
+
+    @Test
+    public void maxValueIndexDuplicates() {
+        arrayTest = new int[]{ 3, 7, 6, 7, 5};
+        assertEquals(1,Program.maxValueIndex(arrayTest));
     }
 
     @Test
