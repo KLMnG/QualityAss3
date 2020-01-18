@@ -19,6 +19,51 @@ public class MergeDriver {
     }
 
     @Test
+    public void mergeFirstEmptyAllStub() {
+        int [] firstArray = new int[]{};
+        int [] secondArray = new int[]{2, 4, 6};
+        int [] merged = mergeAllStub(firstArray, secondArray);
+        assertArrayEquals(new int[]{ 2, 4, 6}, merged);
+        assertEquals(3, merged.length);
+    }
+
+    @Test
+    public void mergeSeccondEmptyAllStub() {
+        int [] firstArray = new int[]{2, 4, 6};
+        int [] secondArray = new int[]{};
+        int [] merged = mergeAllStub(firstArray, secondArray);
+        assertArrayEquals(new int[]{ 2, 4, 6}, merged);
+        assertEquals(3, merged.length);
+    }
+
+    @Test
+    public void mergeSeccondBothAllStub() {
+        int [] firstArray = new int[]{};
+        int [] secondArray = new int[]{};
+        int [] merged = mergeAllStub(firstArray, secondArray);
+        assertArrayEquals(new int[]{}, merged);
+        assertEquals(0, merged.length);
+    }
+
+    @Test
+    public void mergeFirstEmptySeccondNullAllStub() {
+        int [] firstArray = new int[]{};
+        int [] secondArray = null;
+        int [] merged = mergeAllStub(firstArray, secondArray);
+        assertArrayEquals(new int[]{}, merged);
+        assertEquals(0, merged.length);
+    }
+
+    @Test
+    public void mergeFirstNullSeccondEmptyAllStub() {
+        int [] firstArray = null;
+        int [] secondArray = new int[]{};;
+        int [] merged = mergeAllStub(firstArray, secondArray);
+        assertArrayEquals(new int[]{}, merged);
+        assertEquals(0, merged.length);
+    }
+
+    @Test
     public void mergeBothNullmergeAllStub() {
         int [] firstArray = null;
         int [] secondArray = null;
@@ -39,6 +84,67 @@ public class MergeDriver {
         assertArrayEquals(new int[]{1, 2, 3, 4}, mergeAllStub(firstArray, secondArray));
     }
 
+    @Test
+    public void mergeSortAllStub() {
+        int [] firstArray = new int[]{1, 3, 5};
+        int [] secondArray = new int[]{2, 4, 6};
+        int [] merged = mergeSortAllStub(firstArray, secondArray);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, merged);
+        assertEquals(6, merged.length);
+    }
+
+    @Test
+    public void mergeBothNullmergeSortAllStub() {
+        int [] firstArray = null;
+        int [] secondArray = null;
+        assertNull(mergeSortAllStub(firstArray, secondArray));
+    }
+
+    @Test
+    public void mergeSecondNullmergeSortAllStub() {
+        int [] firstArray = new int[]{4, 3, 1, 2};
+        int [] secondArray = null;
+        assertArrayEquals(new int[]{1, 2, 3, 4}, mergeSortAllStub(firstArray, secondArray));
+    }
+
+    @Test
+    public void mergeFirstNullmergeSortAllStub() {
+        int [] firstArray = null;
+        int [] secondArray = new int[]{4, 3, 1, 2};
+        assertArrayEquals(new int[]{1, 2, 3, 4}, mergeSortAllStub(firstArray, secondArray));
+    }
+
+    @Test
+    public void mergeSortSizeStub() {
+        int [] firstArray = new int[]{1, 3, 5};
+        int [] secondArray = new int[]{2, 4, 6};
+        int [] merged = mergeSortSizeStub(firstArray, secondArray);
+        assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, merged);
+        assertEquals(6, merged.length);
+    }
+
+    @Test
+    public void mergeBothNullmergeSortSizeStub() {
+        int [] firstArray = null;
+        int [] secondArray = null;
+        assertNull(mergeSortSizeStub(firstArray, secondArray));
+    }
+
+    @Test
+    public void mergeSecondNullmergeSortSizeStub() {
+        int [] firstArray = new int[]{4, 3, 1, 2};
+        int [] secondArray = null;
+        assertArrayEquals(new int[]{1, 2, 3, 4}, mergeSortSizeStub(firstArray, secondArray));
+    }
+
+    @Test
+    public void mergeFirstNullmergeSortSizeStub() {
+        int [] firstArray = null;
+        int [] secondArray = new int[]{4, 3, 1, 2};
+        assertArrayEquals(new int[]{1, 2, 3, 4}, mergeSortSizeStub(firstArray, secondArray));
+    }
+
+
     private static int[] mergeAllStub(int[] ar1, int[] ar2) {
         if (ar1==null && ar2==null) return null;
         if (ar1==null) return SortArrayStub.sortArrayStub(ar2);
@@ -52,12 +158,38 @@ public class MergeDriver {
         return SortArrayStub.sortArrayStub(res);
     }
 
+    private static int[] mergeSortAllStub(int[] ar1, int[] ar2) {
+        if (ar1==null && ar2==null) return null;
+        if (ar1==null) return SortArrayStub.sortArrayAllStub(ar2);
+        if (ar2==null) return SortArrayStub.sortArrayAllStub(ar1);
+        int[] res = new int[ar1.length+ar2.length];
+        int i = 0;
+        for(int j=0; j<ar1.length; j++)
+            res[i++] = ar1[j];
+        for(int j=0; j<ar2.length; j++)
+            res[i++] = ar2[j];
+        return SortArrayStub.sortArrayAllStub(res);
+    }
+
+    private static int[] mergeSortSizeStub(int[] ar1, int[] ar2) {
+        if (ar1==null && ar2==null) return null;
+        if (ar1==null) return SortArrayStub.sortArraySizeStub(ar2);
+        if (ar2==null) return SortArrayStub.sortArraySizeStub(ar1);
+        int[] res = new int[ar1.length+ar2.length];
+        int i = 0;
+        for(int j=0; j<ar1.length; j++)
+            res[i++] = ar1[j];
+        for(int j=0; j<ar2.length; j++)
+            res[i++] = ar2[j];
+        return SortArrayStub.sortArraySizeStub(res);
+    }
+
     @Test
     public void merge() {
         int [] firstArray = new int[]{1, 3, 5};
         int [] secondArray = new int[]{2, 4, 6};
         assertArrayEquals(new int[]{1, 2, 3, 4, 5, 6}, Program.merge(firstArray, secondArray));
-        assertEquals(6, Program.size(Program.merge(firstArray, secondArray)));
+        assertEquals(6, Program.merge(firstArray, secondArray).length);
     }
 
     @Test

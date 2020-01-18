@@ -11,4 +11,9 @@ public class MaxValueStub {
         }
         return Collections.max(Arrays.asList(arrInteger));
     }
+
+    public static int maxValueMinIndexStub(int [] arr){
+        int ind = MaxValueIndexStub.maxValueIndexStub(arr);
+        return arr[ind];
+    }
 }

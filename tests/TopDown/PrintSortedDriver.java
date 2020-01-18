@@ -19,7 +19,6 @@ public class PrintSortedDriver {
     public  void printSortedEmptyAllStub() throws IOException {
         printSortedAllStub(new int [] {});
     }
-
     @Test
     public void printSortedPrintStub() throws IOException {
         printSortedPrintStub(new int [] {1,2,3});
@@ -31,6 +30,19 @@ public class PrintSortedDriver {
     @Test
     public  void printSortedEmptyPrintStub() throws IOException {
         printSortedPrintStub(new int [] {});
+    }
+
+    @Test
+    public void printSortedSortSizeStub() throws IOException {
+        printSortedSortSizeStub(new int [] {1,2,3});
+    }
+    @Test(expected = NullPointerException.class)
+    public void printSortedNullSortSizeStub() throws IOException {
+        printSortedSortSizeStub(null);
+    }
+    @Test
+    public  void printSortedEmptySortSizeStub() throws IOException {
+        printSortedSortSizeStub(new int [] {});
     }
 
     @Test
@@ -59,10 +71,20 @@ public class PrintSortedDriver {
         if (arr==null)
             System.out.println("No array");
         PrintArrStub.printArrStub(arr);
-        arr = Program.sortArray(arr);
-        PrintArrStub.printArrStub(Program.sortArray(arr));
+        arr = SortArrayStub.sortArrayAllStub(arr);
+        PrintArrStub.printArrStub(SortArrayStub.sortArrayAllStub(arr));
         PrintArrStub.printArrStub(arr);
     }
+
+    private void printSortedSortSizeStub(int[] arr) throws IOException {
+        if (arr==null)
+            System.out.println("No array");
+        Program.printArr(arr);
+        arr = SortArrayStub.sortArrayAllStub(arr);
+        Program.printArr(SortArrayStub.sortArrayAllStub(arr));
+        Program.printArr(arr);
+    }
+
 
 
 }

@@ -46,6 +46,42 @@ public class SumMinMaxDriver {
     }
 
     @Test
+    public void sumMinMaxStub(){
+        int [] testArray = new int [] {1,2,3,4,10};
+        assertEquals(11, sumMinMaxStub(testArray));
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void sumMinMaxEmptyStub() {
+        int [] testArray = new int[]{};
+        sumMinMaxStub(testArray);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void sumMinMaxNullStub() {
+        int [] testArray = null;
+        sumMinMaxStub(testArray);
+    }
+
+    @Test
+    public void sumMinMaxMinRealStub(){
+        int [] testArray = new int [] {1,2,3,4,10};
+        assertEquals(11, sumMinMaxMinRealStub(testArray));
+    }
+
+    @Test(expected = NoSuchElementException.class)
+    public void sumMinMaxMinRealEmptyStub() {
+        int [] testArray = new int[]{};
+        sumMinMaxMinRealStub(testArray);
+    }
+
+    @Test(expected = NullPointerException.class)
+    public void sumMinMaxMinRealNullStub() {
+        int [] testArray = null;
+        sumMinMaxMinRealStub(testArray);
+    }
+
+    @Test
     public void sumMinMax(){
         int [] testArray = new int [] {1,2,3,4,10};
         assertEquals(11, Program.sumMinMax(testArray));
@@ -68,7 +104,13 @@ public class SumMinMaxDriver {
     }
 
     private int sumMinMaxMinStub(int[] arr) {
-        return MinValueStub.minValueStub(arr) + Program.maxValue(arr);
+        return MinValueStub.minValueStub(arr) + MaxValueStub.maxValueMinIndexStub(arr);
+    }
+    private int sumMinMaxStub(int[] arr) {
+        return MinValueStub.minValueMinIndexStub(arr) + MaxValueStub.maxValueMinIndexStub(arr);
+    }
+    private int sumMinMaxMinRealStub(int[] arr) {
+        return Program.minValue(arr) + MaxValueStub.maxValueMinIndexStub(arr);
     }
 
 }

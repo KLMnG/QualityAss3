@@ -14,4 +14,9 @@ public class MinValueStub {
         return Collections.min(Arrays.asList(arrInteger));
     }
 
+    public static int minValueMinIndexStub(int [] arr){
+        int ind = MinValueIndexStub.minValueIndexStub(arr);
+        return arr[ind];
+    }
+
 }
