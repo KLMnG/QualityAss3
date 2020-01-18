@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class MergeDriver {
+public class BUMergeDriver {
 
     private int[] firstArray;
     private int[] secondArray;

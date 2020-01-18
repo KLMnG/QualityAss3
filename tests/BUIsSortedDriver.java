@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class IsSortedDriver {
+public class BUIsSortedDriver {
 
     private int[] arrayTest;
 

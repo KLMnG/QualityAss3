@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class MaxValueIndexDriver {
+public class BUMaxValueIndexDriver {
 
     private int[]arrayTest;
 

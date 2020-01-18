@@ -2,7 +2,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
-public class EqualArraysDriver {
+public class BUEqualArraysDriver {
 
     private int[] firstArray;
     private int[] secondArray;
