@@ -1,9 +1,7 @@
-package TopDown;
-
 import java.util.Arrays;
 import java.util.Collections;
 
-public class MaxValueStub {
+public class TDMaxValueStub {
     public static int maxValueStub(int [] arr){
         Integer [] arrInteger = new Integer[arr.length];
         for (int i = 0; i < arr.length; i++) {
@@ -13,7 +11,7 @@ public class MaxValueStub {
     }
 
     public static int maxValueMinIndexStub(int [] arr){
-        int ind = MaxValueIndexStub.maxValueIndexStub(arr);
+        int ind = TDMaxValueIndexStub.maxValueIndexStub(arr);
         return arr[ind];
     }
 }

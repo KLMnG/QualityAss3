@@ -1,12 +1,10 @@
-package TopDown;
-
 import org.junit.Test;
 
 import java.util.NoSuchElementException;
 
 import static org.junit.Assert.assertEquals;
 
-public class SumMinMaxDriver {
+public class TDSumMinMaxDriver {
 
 
     @Test
@@ -100,17 +98,17 @@ public class SumMinMaxDriver {
     }
 
     private int sumMinMaxAllStub(int [] arr){
-        return MinValueStub.minValueStub(arr) + MaxValueStub.maxValueStub(arr);
+        return TDMinValueStub.minValueStub(arr) + TDMaxValueStub.maxValueStub(arr);
     }
 
     private int sumMinMaxMinStub(int[] arr) {
-        return MinValueStub.minValueStub(arr) + MaxValueStub.maxValueMinIndexStub(arr);
+        return TDMinValueStub.minValueStub(arr) + TDMaxValueStub.maxValueMinIndexStub(arr);
     }
     private int sumMinMaxStub(int[] arr) {
-        return MinValueStub.minValueMinIndexStub(arr) + MaxValueStub.maxValueMinIndexStub(arr);
+        return TDMinValueStub.minValueMinIndexStub(arr) + TDMaxValueStub.maxValueMinIndexStub(arr);
     }
     private int sumMinMaxMinRealStub(int[] arr) {
-        return Program.minValue(arr) + MaxValueStub.maxValueMinIndexStub(arr);
+        return Program.minValue(arr) + TDMaxValueStub.maxValueMinIndexStub(arr);
     }
 
 }

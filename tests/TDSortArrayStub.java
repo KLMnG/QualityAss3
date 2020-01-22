@@ -1,8 +1,6 @@
-package TopDown;
-
 import java.util.Arrays;
 
-public class SortArrayStub {
+public class TDSortArrayStub {
 
 
     public static int [] sortArrayStub(int [] arr){
@@ -12,9 +10,9 @@ public class SortArrayStub {
     }
     public static int [] sortArrayAllStub(int [] arr){
         if (arr == null) return null;
-        int[] res = CopyArrStub.copyArrStub(arr);
-        for(int i=0; i<SizeStub.sizeStub(arr); i++)
-            for (int j=0; j<SizeStub.sizeStub(arr)-i-1; j++)
+        int[] res = TDCopyArrStub.copyArrStub(arr);
+        for(int i = 0; i< TDSizeStub.sizeStub(arr); i++)
+            for (int j = 0; j< TDSizeStub.sizeStub(arr)-i-1; j++)
                 if (res[j]>res[j+1]) {
                     int temp = res[j];
                     res[j] = res[j+1];
@@ -25,9 +23,9 @@ public class SortArrayStub {
 
     public static int [] sortArraySizeStub(int [] arr){
         if (arr == null) return null;
-        int[] res = CopyArrStub.copyArrAllStub(arr);
-        for(int i=0; i<SizeStub.sizeStub(arr); i++)
-            for (int j=0; j<SizeStub.sizeStub(arr)-i-1; j++)
+        int[] res = TDCopyArrStub.copyArrAllStub(arr);
+        for(int i = 0; i< TDSizeStub.sizeStub(arr); i++)
+            for (int j = 0; j< TDSizeStub.sizeStub(arr)-i-1; j++)
                 if (res[j]>res[j+1]) {
                     int temp = res[j];
                     res[j] = res[j+1];

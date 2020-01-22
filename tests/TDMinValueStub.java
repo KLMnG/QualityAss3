@@ -1,9 +1,7 @@
-package TopDown;
-
 import java.util.Arrays;
 import java.util.Collections;
 
-public class MinValueStub {
+public class TDMinValueStub {
 
 
     public static int minValueStub(int [] arr){
@@ -15,7 +13,7 @@ public class MinValueStub {
     }
 
     public static int minValueMinIndexStub(int [] arr){
-        int ind = MinValueIndexStub.minValueIndexStub(arr);
+        int ind = TDMinValueIndexStub.minValueIndexStub(arr);
         return arr[ind];
     }
 

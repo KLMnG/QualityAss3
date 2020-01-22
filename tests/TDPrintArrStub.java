@@ -1,5 +1,3 @@
-package TopDown;
-
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
@@ -8,7 +6,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 
-public class PrintArrStub {
+public class TDPrintArrStub {
 
     public static void printArrStub(int[] arr) throws IOException {
         ByteArrayOutputStream outContent = new ByteArrayOutputStream();

@@ -1,8 +1,6 @@
-package TopDown;
-
 import java.util.NoSuchElementException;
 
-public class MinValueIndexStub {
+public class TDMinValueIndexStub {
 
     public static int minValueIndexStub(int [] arr){
         if (arr.length == 0)

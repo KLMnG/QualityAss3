@@ -1,8 +1,6 @@
-package TopDown;
-
 import java.util.NoSuchElementException;
 
-public class MaxValueIndexStub {
+public class TDMaxValueIndexStub {
 
     public static int maxValueIndexStub(int [] arr){
         if (arr.length == 0)

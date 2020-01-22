@@ -1,6 +1,4 @@
-package TopDown;
-
-public class CopyArrStub {
+public class TDCopyArrStub {
 
 
     public static int [] copyArrStub(int [] arr){
@@ -9,8 +7,8 @@ public class CopyArrStub {
 
     public static int [] copyArrAllStub(int [] arr){
         if (arr == null) return null;
-        int[] res = new int[SizeStub.sizeStub(arr)];
-        for(int i=0; i<SizeStub.sizeStub(arr); i++)
+        int[] res = new int[TDSizeStub.sizeStub(arr)];
+        for(int i = 0; i< TDSizeStub.sizeStub(arr); i++)
             res[i] = arr[0];
         return res;
 
